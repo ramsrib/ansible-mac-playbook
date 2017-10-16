@@ -1,0 +1,129 @@
+---
+- hosts: local
+  connection: local
+  tasks:
+  - name: Install homebrew packages
+    homebrew:
+       name="{{ item }}"
+       state=present
+    with_items:
+       - wget
+	   - zsh
+       - vim
+       - ack
+       - tmux
+       - postgresql
+       - rabbitmq
+       - nginx
+       - jenv
+
+  - name: Install iTerm2 
+    homebrew_cask:
+       name: iterm2
+       state: present
+
+  - name: Install Spotify
+    homebrew_cask:
+       name: spotify
+       state: present
+
+  - name: Install Textmate
+    homebrew_cask:
+       name: textmate
+       state: present
+
+  - name: Install Visual Studio Code
+    homebrew_cask:
+       name: visual-studio-code
+       state: present
+
+  - name: Install Jetbrains Toolbox
+    homebrew_cask:
+       name: jetbrains-toolbox
+       state: present
+
+  - name: Install Firefox
+    homebrew_cask:
+       name: firefox
+       state: present
+
+  - name: Install Google Chrome
+    homebrew_cask:
+       name: google-chrome
+       state: present
+
+#  - name: Install Google Chrome Canary
+#    homebrew_cask:
+#       name: google-chrome-canary
+#       state: present
+
+  - name: Install Java
+    homebrew_cask:
+       name: java
+       state: present
+
+  - name: Install Microsoft Office
+    homebrew_cask:
+       name: microsoft-office
+       state: present
+
+  - name: Install Dropbox
+    homebrew_cask:
+       name: dropbox
+       state: present
+
+  - name: Install Box Sync
+    homebrew_cask:
+       name: box-sync
+       state: present
+
+  - name: Install Google Backup and Sync
+    homebrew_cask:
+       name: google-backup-and-sync
+       state: present
+
+  - name: Install Google Web Designer
+    homebrew_cask:	
+       name: google-web-designer
+       state: present
+
+  - name: Install Google Hangouts
+    homebrew_cask:
+       name: google-hangouts
+       state: present
+
+  - name: Install Docker
+    homebrew_cask:
+       name: docker
+       state: present
+
+  - name: Install Docker Toolbox
+    homebrew_cask:
+       name: docker-toolbox
+       state: present
+
+  - name: Install Evernote
+    homebrew_cask:
+       name: evernote
+       state: present
+
+  - name: Install Slack
+    homebrew_cask:
+       name: slack
+       state: present
+
+  - name: Install Gitter
+    homebrew_cask:
+       name: gitter
+       state: present
+
+  - name: Install Wordpress App
+    homebrew_cask:
+       name: wordpresscom
+       state: present
+
+  - name: Install Spectacle
+    homebrew_cask:
+       name: spectacle
+       state: present   
+
