@@ -21,6 +21,13 @@
        - watch
        - node
        - angular-cli
+       - mas
+       - iperf
+       - nmap
+       - mcrypt
+       - httpie
+       - wrk
+       - gifsicle
 
   - name: Download zsh installer
     get_url: url=https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh dest=/tmp/zsh-installer.sh
@@ -141,6 +148,11 @@
   - name: Install SQL Electron
     homebrew_cask:
        name: sqlectron
+       state: present
+
+  - name: Install Lastpass
+    homebrew_cask:
+       name: lastpass
        state: present
 
   - name: Tap cask version
