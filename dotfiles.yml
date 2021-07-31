@@ -1,0 +1,53 @@
+---
+- hosts: local
+  connection: local
+
+  vars_files:
+    - default.config.yml
+
+  roles:
+    - role: geerlingguy.dotfiles
+      when: configure_dotfiles
+      tags: ["dotfiles"]
+
+  tasks:
+    # tmux setup
+    - name: Clone .tmux from github
+      ansible.builtin.git:
+        repo: git@github.com:gpakosz/.tmux.git
+        dest: ~/.tmux
+    - name: Link .tmux.conf
+      file:
+        src: ~/.tmux/.tmux.conf
+        dest: ~/.tmux.conf
+        state: link
+    - name: Link .tmux.local.conf
+      file:
+        src: ~/.tmux/.tmux.conf.local
+        dest: ~/.tmux.conf.local
+        state: link
+    # vim setup
+    - name: Create .vim backup directory if it does not exist
+      ansible.builtin.file:
+        path: ~/.vim/backups
+        state: directory
+    - name: Create .vim swaps directory if it does not exist
+      ansible.builtin.file:
+        path: ~/.vim/swaps
+        state: directory
+    - name: Clone vim solarized8 theme
+      ansible.builtin.git:
+        repo: git@github.com:lifepillar/vim-solarized8.git
+        dest: ~/.vim/pack/themes/opt/solarized8
+    - name: Clone vim solarized theme
+      ansible.builtin.git:
+        repo: git@github.com:altercation/vim-colors-solarized.git
+        dest: ~/.vim/pack/themes/opt/solarized
+    # font setup
+    - name: Clone powerline fonts from github
+      ansible.builtin.git:
+        repo: git@github.com:powerline/fonts.git
+        dest: /tmp/fonts
+        depth: 1
+    - name: Run install font script
+      ansible.builtin.script: /tmp/fonts/install.sh

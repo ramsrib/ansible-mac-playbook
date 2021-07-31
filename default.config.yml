@@ -1,0 +1,18 @@
+---
+configure_dotfiles: true
+
+dotfiles_repo: git@github.com:ramsrib/dotfiles.git
+dotfiles_repo_accept_hostkey: true
+dotfiles_repo_local_destination: ~/Projects/dotfiles
+dotfiles_files:
+  - .aliasrc
+  - .weworkrc
+  - .secretrc
+  - .zshrc
+  - .gitignore
+  - .gitconfig
+  - .inputrc
+  - .wgetrc
+  - .vimrc
+  - .ssh
+  # - .osx

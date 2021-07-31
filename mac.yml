@@ -2,175 +2,161 @@
 - hosts: local
   connection: local
   tasks:
-  - name: Install homebrew packages
-    homebrew:
-       name="{{ item }}"
-       state=present
-    with_items:
-       - wget
-       - zsh
-       - vim
-       - ack
-       - tmux
-       - postgresql
-       - rabbitmq
-       - nginx
-       - jenv
-       - ponysay
-       - fortune
-       - watch
-       - node
-       - angular-cli
-       - mas
-       - iperf
-       - nmap
-       - mcrypt
-       - httpie
-       - wrk
-       - gifsicle
+    - name: Install homebrew packages
+      homebrew: name="{{ item }}"
+        state=present
+      with_items:
+        - wget
+        - vim
+        - ack
+        - tmux
+        - jenv
+        - ponysay
+        - fortune
+        - watch
+        - nvm
+        - mas
+        - iperf
+        - nmap
+        - mcrypt
+        - httpie
+        - wrk
+        - gifsicle
 
-  - name: Download zsh installer
-    get_url: url=https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh dest=/tmp/zsh-installer.sh
+    # - name: Download zsh installer
+    #   get_url: url=https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh dest=/tmp/zsh-installer.sh
 
-  - name: Execute the zsh-installer.sh
-    script: /tmp/zsh-installer.sh
+    # - name: Execute the zsh-installer.sh
+    #   script: /tmp/zsh-installer.sh
 
-  - name: Install iTerm2 
-    homebrew_cask:
-       name: iterm2
-       state: present
+    - name: Install iTerm2
+      homebrew_cask:
+        name: iterm2
+        state: present
 
-  - name: Install Spotify
-    homebrew_cask:
-       name: spotify
-       state: present
+    # - name: Install Spotify
+    #   homebrew_cask:
+    #     name: spotify
+    #     state: present
 
-  - name: Install Textmate
-    homebrew_cask:
-       name: textmate
-       state: present
+    - name: Install Textmate
+      homebrew_cask:
+        name: textmate
+        state: present
 
-  - name: Install Visual Studio Code
-    homebrew_cask:
-       name: visual-studio-code
-       state: present
+    - name: Install Visual Studio Code
+      homebrew_cask:
+        name: visual-studio-code
+        state: present
 
-  - name: Install Jetbrains Toolbox
-    homebrew_cask:
-       name: jetbrains-toolbox
-       state: present
+    - name: Install Jetbrains Toolbox
+      homebrew_cask:
+        name: jetbrains-toolbox
+        state: present
 
-  - name: Install Firefox
-    homebrew_cask:
-       name: firefox
-       state: present
+    # - name: Install Firefox
+    #   homebrew_cask:
+    #     name: firefox
+    #     state: present
 
-  - name: Install Google Chrome
-    homebrew_cask:
-       name: google-chrome
-       state: present
+    # - name: Install Google Chrome
+    #   homebrew_cask:
+    #     name: google-chrome
+    #     state: present
 
-  - name: Install Java
-    homebrew_cask:
-       name: java
-       state: present
+    # - name: Install Java
+    #   homebrew_cask:
+    #     name: java
+    #     state: present
 
-  - name: Install Microsoft Office
-    homebrew_cask:
-       name: microsoft-office
-       state: present
+    # - name: Install Microsoft Office
+    #   homebrew_cask:
+    #     name: microsoft-office
+    #     state: present
 
-  - name: Install Dropbox
-    homebrew_cask:
-       name: dropbox
-       state: present
+    - name: Install Dropbox
+      homebrew_cask:
+        name: dropbox
+        state: present
 
-  - name: Install Box Sync
-    homebrew_cask:
-       name: box-sync
-       state: present
+    - name: Install Box Sync
+      homebrew_cask:
+        name: box-sync
+        state: present
 
-  - name: Install Google Backup and Sync
-    homebrew_cask:
-       name: google-backup-and-sync
-       state: present
+    - name: Install Google Backup and Sync
+      homebrew_cask:
+        name: google-backup-and-sync
+        state: present
 
-  - name: Install Google Web Designer
-    homebrew_cask:	
-       name: google-web-designer
-       state: present
+    # - name: Install Google Web Designer
+    #   homebrew_cask:
+    #     name: google-web-designer
+    #     state: present
 
-  - name: Install Google Hangouts
-    homebrew_cask:
-       name: google-hangouts
-       state: present
+    # - name: Install Google Hangouts
+    #   homebrew_cask:
+    #     name: google-hangouts
+    #     state: present
 
-  - name: Install Docker
-    homebrew_cask:
-       name: docker
-       state: present
+    - name: Install Docker
+      homebrew_cask:
+        name: docker
+        state: present
 
-  - name: Install Docker Toolbox
-    homebrew_cask:
-       name: docker-toolbox
-       state: present
+    # - name: Install Docker Toolbox
+    #   homebrew_cask:
+    #     name: docker-toolbox
+    #     state: present
 
-  - name: Install Evernote
-    homebrew_cask:
-       name: evernote
-       state: present
+    # - name: Install Evernote
+    #   homebrew_cask:
+    #     name: evernote
+    #     state: present
 
-  - name: Install Slack
-    homebrew_cask:
-       name: slack
-       state: present
+    # - name: Install Slack
+    #   homebrew_cask:
+    #     name: slack
+    #     state: present
 
-  - name: Install Gitter
-    homebrew_cask:
-       name: gitter
-       state: present
+    # - name: Install Gitter
+    #   homebrew_cask:
+    #     name: gitter
+    #     state: present
 
-  - name: Install Wordpress App
-    homebrew_cask:
-       name: wordpresscom
-       state: present
+    # - name: Install Wordpress App
+    #   homebrew_cask:
+    #     name: wordpresscom
+    #     state: present
 
-  - name: Install Spectacle
-    homebrew_cask:
-       name: spectacle
-       state: present
+    - name: Install Spectacle
+      homebrew_cask:
+        name: spectacle
+        state: present
 
-  - name: Install VLC
-    homebrew_cask:
-       name: vlc
-       state: present
+    # - name: Install VLC
+    #   homebrew_cask:
+    #     name: vlc
+    #     state: present
 
-  - name: Install SQL Electron
-    homebrew_cask:
-       name: sqlectron
-       state: present
+    # - name: Install SQL Electron
+    #   homebrew_cask:
+    #     name: sqlectron
+    #     state: present
 
-  - name: Install Lastpass
-    homebrew_cask:
-       name: lastpass
-       state: present
-
-  - name: Tap cask version
-    homebrew_tap:
-       name: caskroom/versions
-       state: present
-
-  - name: Install Java 8
-    homebrew_cask:
-       name: java8
-       state: present
-
-  - name: Install Google Chrome Canary
-    homebrew_cask:
-       name: google-chrome-canary
-       state: present
-
-  - name: Install Maven
-    homebrew:
-       name: maven
-       state: present
+    - name: Install Lastpass
+      homebrew_cask:
+        name: lastpass
+        state: present
+    # - name: Tap cask version
+    #   homebrew_tap:
+    #     name: caskroom/versions
+    #     state: present
+    # - name: Install Java 8
+    #   homebrew_cask:
+    #     name: java8
+    #     state: present
+    # - name: Install Maven
+    #   homebrew:
+    #     name: maven
+    #     state: present
