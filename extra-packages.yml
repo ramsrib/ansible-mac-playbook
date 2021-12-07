@@ -7,5 +7,27 @@
         name: "{{ item }}"
         state: present
       with_items:
+        - iterm2
+        - visual-studio-code
+        - jetbrains-toolbox
+        - google-backup-and-sync
+        - spectacle
+        - docker
         - virtualbox
         - virtualbox-extension-pack
+        - textmate
+        - spotify-tui
+        # - spotify
+        # - firefox
+        - notion
+        - postman
+        - 1password
+        - discord
+        - obsidian
+        - xbar
+        - mysqlworkbench
+        - redisinsight
+        - whatsapp
+        - messenger
+        - brave-browser
+        - tor-browser

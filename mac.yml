@@ -10,7 +10,9 @@
         - vim
         - ack
         - tmux
+        - tmuxinator
         - jenv
+        - java
         - ponysay
         - fortune
         - watch
@@ -18,10 +20,35 @@
         - mas
         - iperf
         - nmap
+        - telnet
         - mcrypt
         - httpie
         - wrk
         - gifsicle
+        - k9s
+        - yarn
+        - golang
+        - pipenv
+        - pyenv
+        - poetry
+        # you might need to run the rbenv init manually
+        - rbenv
+        # required by rails
+        - shared-mime-info
+        - libpq
+        # required by gem and pip packages
+        - postgresql
+        - git-crypt
+        - pgcli
+        - mycli
+        - iredis
+        - dos2unix
+        - jq
+        - graphviz # dot (i.e. digraph) file viewer
+        - k3d
+        - kubectx
+        - tree
+        - pstree
 
     # - name: Download zsh installer
     #   get_url: url=https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh dest=/tmp/zsh-installer.sh
